@@ -7,7 +7,6 @@ describe('GET', function () {
   it('responds with json', function (done) {
     request(app)
       .get('/')
-      .set('Accept', 'application/json')
       .expect('Content-Type', /text/)
       .expect(200)
       .then((response) => {
@@ -18,3 +17,44 @@ describe('GET', function () {
   });
 });
 
+describe('POST', function () {
+  it('responds with json', function (done) {
+    request(app)
+      .post('/')
+      .expect('Content-Type', /text/)
+      .expect(200)
+      .then((response) => {
+        assert(response, "post");
+        done();
+      })
+      .catch(done);
+  });
+});
+
+describe('PUT', function () {
+  it('responds with json', function (done) {
+    request(app)
+      .put('/')
+      .expect('Content-Type', /text/)
+      .expect(200)
+      .then((response) => {
+        assert(response, "put");
+        done();
+      })
+      .catch(done);
+  });
+});
+
+describe('DELETE', function () {
+  it('responds with json', function (done) {
+    request(app)
+      .delete('/')
+      .expect('Content-Type', /text/)
+      .expect(200)
+      .then((response) => {
+        assert(response, "delete");
+        done();
+      })
+      .catch(done);
+  });
+});
