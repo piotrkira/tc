@@ -1,3 +1,4 @@
+cat computer.txt
 cd kubernetes/
 kubectl apply -f redis/
 kubectl apply -f mongo/
