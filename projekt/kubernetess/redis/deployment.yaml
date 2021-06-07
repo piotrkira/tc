@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  labels:
+    db: redis
+spec:
+  template:
+    metadata:
+      name: redis
+      labels:
+        db: redis
+        tier: backend
+    spec:
+      containers:
+        - name: redis
+          image: redis
+  replicas: 1
+  selector:
+    matchLabels:
+      db: redis
+      tier: backend

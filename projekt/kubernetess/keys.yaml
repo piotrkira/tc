@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  redis_host: redis
+  redis_port: "6379"
+  mongo_host: mongo
+  mongo_port: "27017"
+  mongo_dbname: names
+  backend_host: backend
+  frontend_host: frontend
