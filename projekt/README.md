@@ -18,4 +18,5 @@ minikube config set vm-driver kvm2
 minikube start
 minikube addons enable ingress
 ./setup.sh
+minikube ip
 ```

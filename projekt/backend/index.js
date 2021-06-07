@@ -15,7 +15,7 @@ app.use("/citizens", citizens);
 app.use("/accounts", accounts);
 app.use("/pollsters", pollsters);
 
-app.post("/ping", (_req, res) => {
+app.get("/ping", (_req, res) => {
   res.send("pong");
 });
 
