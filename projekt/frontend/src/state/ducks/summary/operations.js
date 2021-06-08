@@ -135,12 +135,14 @@ const mockSummary = [
     },
 ];
 
+const domainName =  window.location.hostname;
+
 const fetchSummary = () => (dispatch) => {
     // console.log("fetching summary");
     // dispatch({ type: FETCH_SUMMARY, payload: mockSummary });
     dispatch(
         createAction({
-            endpoint: "http://localhost:5000/citizens/summaryByRegion",
+            endpoint: `http://${domainName}/api/citizens/summaryByRegion`,
             method: "GET",
             headers: { "Content-Type": "application/json" },
             types: [SUMMARY_REQUEST, FETCH_SUMMARY, SUMMARY_FAILURE],

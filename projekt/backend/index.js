@@ -31,7 +31,6 @@ const mongoose = require("mongoose");
 const addAdmin = async () => {
   try {
     if ( !Admin.exists({ login: "admin" })) {
-      elo 
       const adm = new Admin({ login: "admin", password: "admin" });
       await adm.save();
       console.log("Dodano Admina !!!");

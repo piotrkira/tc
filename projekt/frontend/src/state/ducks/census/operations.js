@@ -1,6 +1,8 @@
 import { createAction } from "redux-api-middleware";
 import { CENSUS_FAILURE, CENSUS_REQUEST, CENSUS_SUCCESS } from "./types";
 
+const domainName =  window.location.hostname;
+
 const sendFormData = (data) => (dispatch) => {
     console.log("QUESTIONNAIRE DATA REQUEST");
     console.log(JSON.stringify({...data}))
@@ -23,7 +25,7 @@ const sendFormData = (data) => (dispatch) => {
     }
     dispatch(
         createAction({
-            endpoint: "http://localhost:5000/citizens/add",
+            endpoint: `http://${domainName}/api/citizens/add`,
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({...dataToSend}),

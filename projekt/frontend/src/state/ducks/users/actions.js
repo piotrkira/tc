@@ -3,8 +3,10 @@
 import { USERS_FAILURE, USERS_REQUEST, GET_USERS_SUCCESS,  ADD_USERS, DELETE_USERS, PATCH_USERS  } from "./types.js";
 import { createAction } from 'redux-api-middleware'
 
+const domainName =  window.location.hostname;
+
 export const getUsers = () => (dispatch) => dispatch(createAction({
-  endpoint: 'http://backend:5000/citizens/all ',
+	endpoint: `http://${domainName}/api/citizens/all `,
   method: 'GET',
   headers: {
     "Accept": "application/json",
@@ -20,7 +22,7 @@ export const getUsers = () => (dispatch) => dispatch(createAction({
 
 
 export const addUsers = (values) => (dispatch) => dispatch(createAction({
-  endpoint: 'http://backend:5000/citizens/add',
+  endpoint: `http://${domainName}/api/citizens/add`,
   method: 'POST',
   headers: {
     "Accept": "application/json",
@@ -39,7 +41,7 @@ export const addUsers = (values) => (dispatch) => dispatch(createAction({
 
 
 export const delUsers = (id) => (dispatch) => dispatch(createAction({
-  endpoint: `http://backend:5000/citizens/${id}`,
+  endpoint: `http://${domainName}/api/citizens/${id}`,
   method: 'DELETE',
   headers: {
     "Accept": "application/json",
@@ -56,7 +58,7 @@ export const delUsers = (id) => (dispatch) => dispatch(createAction({
 }))
 
 export const putUsers = (values) => (dispatch) => dispatch(createAction({
-  endpoint: `http://backend:5000/citizens/${values.id}`,
+  endpoint: `http://${domainName}/api/citizens/${values.id}`,
   method: 'PATCH',
   headers: {
     "Accept": "application/json",

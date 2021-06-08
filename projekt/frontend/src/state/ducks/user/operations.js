@@ -1,11 +1,13 @@
 import { createAction } from "redux-api-middleware";
 import types from "./types";
 
+const domainName =  window.location.hostname;
+
 const login = (login, password, isAdmin) => (dispatch) => {
     if(isAdmin) {
         dispatch(
             createAction({
-                endpoint: "http://localhost:5000/accounts/login-admin",
+                endpoint: `http://${domainName}/api/accounts/login-admin`,
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ login, password }),
@@ -20,7 +22,7 @@ const login = (login, password, isAdmin) => (dispatch) => {
     }
     dispatch(
         createAction({
-            endpoint: "http://localhost:5000/accounts/login-user",
+            endpoint: `http://${domainName}/api/accounts/login-user`,
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ login, password }),
