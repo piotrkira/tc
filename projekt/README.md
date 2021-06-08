@@ -15,7 +15,7 @@ gdyż w razie zwiększonego ruch ilość replik jest zwiększana.
 
 W plikach konfiguracyjncyh zostały również ustalone limity zasobów
 komputerowych dla każdego z poda by w razie jakiegoś problemu z
-nadmierną alokacją pamięci nie miało to wpływu na pozostałe
+nadmierną alokacją pamięci, by nie miało to wpływu na pozostałe
 mikroserwisy działające na tej samej maszynie.
 
 Dostęp do Frontendu - example.com
