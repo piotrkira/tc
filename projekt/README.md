@@ -34,7 +34,7 @@ kopi w bazie Redis.
 
 ```
 minikube config set vm-driver kvm2
-minikube start
+minikube start --cpus 4 --memory 4000
 minikube addons enable ingress
 ./setup.sh
 minikube ip | awk '{printf "example.com\t%s\n", $1}' > /etc/hosts
